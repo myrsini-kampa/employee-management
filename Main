@@ -1,0 +1,36 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+void main() {
+    String[] contractType = {"PERMANENT", "FIXED_TERM", "CONTRACTOR", "INTERN", "SECONDMENT"};
+    String[] workSchedule= {"7.30-15.30", "7.45-15.45", "08.00-16.00", "08.30-16.30", "09.00-17.00"};
+    String[] workMode = {"Hybrid", "On Site", "Remote"};
+
+    TeamMember teamMember = new TeamMember(
+            "12345",
+            "Anna",
+            "Papadopoulou",
+            "UAM Analyst",
+            "Security Operations",
+            "anna@bank.com",
+            "MID",
+            "+306912345678",
+
+            contractType,
+            workSchedule,
+
+            "Not available Wed 12:00-13:00",
+            "2026-02-20 to 2026-02-22",
+            22,
+            workMode,
+
+            "Mon-Fri 09:00-17:00",
+            "AD, Zabbix, Grafana, Java",
+            "CompTIA Security+ study",
+            "Works with IAM & SOC teams",
+            "BSc Software Development"
+    );
+
+    System.out.println(teamMember); // θα καλέσει το toString()
+
+    //δεν εχω τελειωσει την μεθοδο επιλογης για δουλεια να φτιαξω if και για την τριτη επιλογη και να την βαλω εδω
+}
