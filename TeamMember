@@ -1,0 +1,295 @@
+import java.security.cert.Certificate;
+import java.util.ArrayList;
+
+public class TeamMember {
+
+    private String id;
+    private String firsName;
+    private String lastName;
+    private String role;
+    private String level;
+    private String mobileNumber;
+    String[] contractType = {"PERMANENT", "FIXED_TERM", "CONTRACTOR", "INTERN", "SECONDMENT"};
+    String[] workSchedule = {"7.30-15.30", "7.45-15.45", "08.00-16.00", "08.30-16.30", "09.00-17.00"};
+    private String availabilityNotes;
+    private String PTOPlannedDays;
+    private int PTONumberOfDays;
+    String[] WorkMode = {"Hybrid", "On Site", "Remote"};
+    private String WeeklySchedule;
+    private String skills;
+    private String trainingLog;
+    private String collaborationMap;
+    private String Education;
+    private String Department;
+    private String Email;
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getDepartment() {
+        return Department;
+    }
+
+    public void setDepartment(String department) {
+        Department = department;
+    }
+
+    public TeamMember(String id, String firsName, String lastName, String role, String Department, String Email, String level, String mobileNumber, String[] contractType, String[] workSchedule, String availabilityNotes, String PTOPlannedDays, int PTONumberOfDays, String[] workMode, String weeklySchedule, String skills, String trainingLog, String collaborationMap, String education) {
+        this.id = id;
+        this.firsName = firsName;
+        this.lastName = lastName;
+        this.role = role;
+        this.Email = Email;
+        this.Department = Department;
+        this.level = level;
+        this.mobileNumber = mobileNumber;
+        this.contractType = contractType;
+        this.workSchedule = workSchedule;
+        this.availabilityNotes = availabilityNotes;
+        this.PTOPlannedDays = PTOPlannedDays;
+        this.PTONumberOfDays = PTONumberOfDays;
+        WorkMode = workMode;
+        WeeklySchedule = weeklySchedule;
+        this.skills = skills;
+        this.trainingLog = trainingLog;
+        this.collaborationMap = collaborationMap;
+        this.Education = education;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFirsName() {
+        return firsName;
+    }
+
+    public void setFirsName(String firsName) {
+        this.firsName = firsName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String[] getContractType() {
+        return contractType;
+    }
+
+    public void setContractType(String[] contractType) {
+        this.contractType = contractType;
+    }
+
+    public String[] getWorkSchedule() {
+        return workSchedule;
+    }
+
+    public void setWorkSchedule(String[] workSchedule) {
+        this.workSchedule = workSchedule;
+    }
+
+    public String getAvailabilityNotes() {
+        return availabilityNotes;
+    }
+
+    public void setAvailabilityNotes(String availabilityNotes) {
+        this.availabilityNotes = availabilityNotes;
+    }
+
+    public String getPTOPlannedDays() {
+        return PTOPlannedDays;
+    }
+
+    public void setPTOPlannedDays(String PTOPlannedDays) {
+        this.PTOPlannedDays = PTOPlannedDays;
+    }
+
+    public int getPTONumberOfDays() {
+        return PTONumberOfDays;
+    }
+
+    public void setPTONumberOfDays(int PTONumberOfDays) {
+        this.PTONumberOfDays = PTONumberOfDays;
+    }
+
+    public String[] getWorkMode() {
+        return WorkMode;
+    }
+
+    public void setWorkMode(String[] workMode) {
+        WorkMode = workMode;
+    }
+
+    public String getWeeklySchedule() {
+        return WeeklySchedule;
+    }
+
+    public void setWeeklySchedule(String weeklySchedule) {
+        WeeklySchedule = weeklySchedule;
+    }
+
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public String getTrainingLog() {
+        return trainingLog;
+    }
+
+    public void setTrainingLog(String trainingLog) {
+        this.trainingLog = trainingLog;
+    }
+
+    public String getCollaborationMap() {
+        return collaborationMap;
+    }
+
+    public void setCollaborationMap(String collaborationMap) {
+        this.collaborationMap = collaborationMap;
+    }
+
+    public String getEducation() {
+        return Education;
+    }
+
+    public void setEducation(String education) {
+        Education = education;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + " , First Name: " + firsName + " , Last Name: " + lastName + " , Department: " + Department + " , Role: " + role + " , Mobile-Number: " + mobileNumber + " , E-mail: " + Email + " , Level: " + level;
+    }
+
+    //ΜΕΘΟΔΟΙ
+
+    // getFullName()
+
+    public String EmployeesName() {
+        String[][] employeeInfo = new String[][]{
+                {"id: ", id},
+                {"First Name ", firsName},
+                {"Last Name", lastName},
+                {"Department", Department},
+                {"Role ", role},
+                {"Level ", level},
+                {"E-mail", Email},
+                {"Mobile Number", mobileNumber},
+                {"Technical Skills ", skills},
+                {"Education ", Education},
+                {"Training ", trainingLog}
+        };
+        return employeeInfo.toString();
+    }
+
+    public String[] choosingFromList(String[] contractType, String[] workMode, String[] workSchedule) {
+        for (int i = 0; i < contractType.length; i++) {
+
+            if (contractType[i].equals("PERMANENT")) {
+                return new String[]{"PERMANENT"};
+            }
+            if (contractType[i].equals("FIXED_TERM")) {
+                return new String[]{"FIXED_TERM"};
+            }
+            if (contractType[i].equals("CONTRACTOR")) {
+                return new String[]{"CONTRACTOR"};
+            }
+            if (contractType[i].equals("INTERN")) {
+                return new String[]{"INTERN"};
+            }
+            if (contractType[i].equals("SECONDMENT")) {
+                return new String[]{"SECONDMENT"};
+            }
+        }
+
+        for (int j = 0; j < workMode.length; j++) {
+            //"Hybrid", "On Site", "Remote"
+            if (workMode[j].equals("Hybrid")) {
+                return new String[]{"Hybrid"};
+            }
+            if (workMode[j].equals("Remote")) {
+                return new String[]{"Remote"};
+            }
+            if (workMode[j].equals("On Site")) {
+                return new String[]{"On Site"};
+            }
+        }
+        return contractType;
+    }
+}
+
+        /*
+         private String id;
+    private String firsName;
+    private String lastName;
+    this.role = role;
+        this.Email=Email;
+        this.Department=Department;
+        this.level = level;
+        this.mobileNumber = mobileNumber;
+        this.contractType = contractType;
+        this.workSchedule = workSchedule;
+          this.skills = skills;
+        this.trainingLog = trainingLog;
+        this.collaborationMap = collaborationMap;
+        Education = education;
+         */
+
+
+    // // ADD EMPLOYEE
+    //summaryLine()
+    //hasAvailabilityNotes()
+    //hasPlannedPTO()
+    // public void addSkill(String skill) {}
+    //  public boolean hasSkill(String skill) {}
+     // addTraining(String item) (ίδια λογική με skills)
+    //has education
+    //add eduction
+    // String [] contractType = {"PERMANENT", "FIXED_TERM", "CONTRACTOR", "INTERN", "SECONDMENT"};
+    //    String [] workSchedule ={"7.30-15.30", "7.45-15.45", "08.00-16.00", "08.30-16.30", "09.00-17.00"};
+    //    String []WorkMode ={"Hybrid", "On Site", "Remote"};
+     // collaborationMap
+    // addCollaborator(String memberId)
+     // worksOftenWith(String memberId)
+
